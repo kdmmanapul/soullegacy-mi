@@ -134,6 +134,8 @@
     @apply bg-popupsbg;
     @apply border border-neutral-50;
     @apply shadow;
+    // background-image: url('../../images/bg.png');
+    // color: rgb(0, 0, 0) !important;
 
     &.cannot-mint .emoji {
       @apply block;
@@ -173,13 +175,13 @@
     @apply shadow;
 
     .preview {
-      @apply p-8;
+      // @apply p-8;
 
       @apply bg-primary-200;
       
       img {
-        @apply m-auto;
-        @apply max-h-52;
+        // @apply m-auto;
+        // @apply max-h-52;
         
         filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
       }
@@ -222,4 +224,107 @@
       }
     }
   }
+
+  .picture1 {
+    position: fixed;
+    width: 500px;
+    height: auto;
+    right: 5%;
+    top: 20%;
+    z-index: -5;
+  }
+
+  .picture2 {
+    position: fixed;
+    width: 500px;
+    height: auto;
+    left: 10%;
+    top: 20%;
+    z-index: -5;
+  }
+
+  .picture3 {
+    position: fixed;
+    width: 500px;
+    height: auto;
+    right: 5%;
+    top: 60%;
+    z-index: -5;
+  }
+
+  .picture4 {
+    position: fixed;
+    width: 500px;
+    height: auto;
+    left: 10%;
+    top: 60%;
+    z-index: -5;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    left: 2%;
+    top: 15%;
+    position: fixed;
+    // width: 200px;
+    z-index: -5;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 12%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .row2 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    left: 63%;
+    top: 18%;
+    position: fixed;
+    // width: 200px;
+    z-index: -5;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column2 {
+    flex: 25%;
+    max-width: 32%;
+    padding: 0 4px;
+  }
+  
+  .column2 img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .slide {
+    // width:24px;
+    // height:24px;
+    position:relative;
+    -webkit-animation:glide 1.5s ease-in-out alternate infinite;
+ }
+ 
+ @-webkit-keyframes glide  {
+    from {
+       left:0px;
+       top:0px;
+    }
+    
+    to {
+       left:20px;
+       top:0px;
+    }
+ }
 }

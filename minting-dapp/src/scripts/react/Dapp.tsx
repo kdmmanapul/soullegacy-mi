@@ -145,6 +145,20 @@ export default class Dapp extends React.Component<Props, State> {
   render() {
     return (
       <>
+        {/* <div style={{justifyContent: 'center', textAlign: 'center'}}>
+        <div className='picture1'>
+          <img style={{borderRadius: 50, width: 350, height: 300}} src="/build/images/watergirl.gif" alt="Collection preview"/>
+          </div>
+        <div className='picture2'>
+          <img style={{borderRadius: 50, width: 350, height: 300}} src="/build/images/ryu.gif" alt="Collection preview"/>
+        </div>
+        <div className='picture3'>
+          <img style={{borderRadius: 50, width: 350, height: 300}} src="/build/images/swordguy.gif" alt="Collection preview"/>
+          </div>
+        <div className='picture4'>
+          <img style={{borderRadius: 50, width: 350, height: 300}} src="/build/images/xmfer.gif" alt="Collection preview"/>
+        </div>
+        </div> */}
         {this.isNotMainnet() ?
           <div className="not-mainnet">
             You are not connected to the main network.
@@ -167,18 +181,26 @@ export default class Dapp extends React.Component<Props, State> {
                   isUserInWhitelist={this.state.isUserInWhitelist}
                 />
                 {this.state.totalSupply < this.state.maxSupply ?
-                  <MintWidget
-                    networkConfig={this.state.networkConfig}
-                    maxSupply={this.state.maxSupply}
-                    totalSupply={this.state.totalSupply}
-                    tokenPrice={this.state.tokenPrice}
-                    maxMintAmountPerTx={this.state.maxMintAmountPerTx}
-                    isPaused={this.state.isPaused}
-                    isWhitelistMintEnabled={this.state.isWhitelistMintEnabled}
-                    isUserInWhitelist={this.state.isUserInWhitelist}
-                    mintTokens={(mintAmount) => this.mintTokens(mintAmount)}
-                    whitelistMintTokens={(mintAmount) => this.whitelistMintTokens(mintAmount)}
-                  />
+                  <>
+                    <MintWidget
+                      networkConfig={this.state.networkConfig}
+                      maxSupply={this.state.maxSupply}
+                      totalSupply={this.state.totalSupply}
+                      tokenPrice={this.state.tokenPrice}
+                      maxMintAmountPerTx={this.state.maxMintAmountPerTx}
+                      isPaused={this.state.isPaused}
+                      isWhitelistMintEnabled={this.state.isWhitelistMintEnabled}
+                      isUserInWhitelist={this.state.isUserInWhitelist}
+                      mintTokens={(mintAmount) => this.mintTokens(mintAmount)}
+                      whitelistMintTokens={(mintAmount) => this.whitelistMintTokens(mintAmount)}
+                    />
+                    <div className="collection-status">
+                      <div className="user-address">
+                        <span className="label">Contract Address:</span>
+                        <span className="address">0x913032166A6263fABcb70073D129ab15380c9ee5</span>
+                      </div>
+                    </div>
+                  </>
                   :
                   <div className="collection-sold-out">
                     <h2>Tokens have been <strong>sold out</strong>! <span className="emoji">🥳</span></h2>
@@ -204,12 +226,12 @@ export default class Dapp extends React.Component<Props, State> {
           <div className="no-wallet">
             {!this.isWalletConnected() ? <button className="primary" disabled={this.provider === undefined} onClick={() => this.connectWallet()}>Connect Wallet</button> : null}
             
-            <div className="use-block-explorer">
+            {/* <div className="use-block-explorer">
               Hey, looking for a <strong>super-safe experience</strong>? <span className="emoji">😃</span><br />
               You can interact with the smart-contract <strong>directly</strong> through <a href={this.generateContractUrl()} target="_blank">{this.state.networkConfig.blockExplorer.name}</a>, without even connecting your wallet to this DAPP! <span className="emoji">🚀</span><br />
               <br />
               Keep safe! <span className="emoji">❤️</span>
-            </div>
+            </div> */}
 
             {!this.isWalletConnected() || this.state.isWhitelistMintEnabled ?
               <div className="merkle-proof-manual-address">

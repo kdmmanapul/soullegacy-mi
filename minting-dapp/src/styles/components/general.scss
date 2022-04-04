@@ -4,7 +4,8 @@ body {
 
   @apply font-sans;
   @apply text-neutral-800;
-  @apply bg-gradient-to-b from-neutral-100 via-neutral-100 to-neutral-200;
+  // @apply bg-gradient-to-b from-neutral-100 via-neutral-100 to-neutral-200;
+  background-image: url('../../images/bg.png');
 }
 
 a, a:link, a:visited {
@@ -26,8 +27,10 @@ main {
 
 #logo {
   @apply m-auto;
-  @apply w-full;
-  @apply max-w-md;
+  // @apply w-full;
+  // @apply max-w-md;
+  width: 60%;
+  height: auto;
 }
 
 span.emoji {
